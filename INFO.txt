@@ -1,0 +1,37 @@
+Interpolation - {{data}} - takes variable data createde in component.ts
+and displays that data in component.html template
+It's called Data Binding - take data from component and show in template
+ex:
+In component.ts
+title = 'todo';
+
+In component.html
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+
+OnInit is an Interface, ngOnInit() is a method for that Interface
+
+Data Binding types:
+Interpolation - {{somevalue}}
+Event Binding - (click)=someMethod()
+Two way binding (component <-> template) with [(ngModel)] - [(ngModel)]="somevalue"
+
+
+Setup Routing:
+1. Go to app-routing.module.ts
+2. Create object like { path: 'yourpath', component: YourComponent } inside const routes: Routes[]
+3. For above to work you need to have Router tag in app.component.html - <router-outlet></router-outlet>
+4. To set Component to be the main/first page that shows, set its path to '' which is root path
+5. To route to error page do path:'**' which means if anything doesn't match specific Route
+then route it to specific Component ('**' means any other route)
+6. To redirect from one Component to another Component using Dependency Injection and Router:
+declare Router as argument in Parent Component's constructor() like constructor(private router: Router)
+then do router.navigate(['path to the other Component'])
+
+
+1. index.html -> main.ts -> (bootstrap) app.module.ts -> app.component.ts
+2. index.html loads <app-root></app-root> which comes
+   from app.component.ts (selector: 'app-root') and app.component.html to show view
+
