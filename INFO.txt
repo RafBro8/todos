@@ -35,3 +35,13 @@ then do router.navigate(['path to the other Component'])
 2. index.html loads <app-root></app-root> which comes
    from app.component.ts (selector: 'app-root') and app.component.html to show view
 
+
+@Injectable({
+  providedIn: 'root'
+})
+This setting allows Service/Component to be available for Dependency Injection into other Components
+
+Window.sessionStorage
+use sessionStorage to check whether user is already logged in to your app or not logged in
+sessionStorage.setItem('authenticatedUser', username);
+check sessionStorafe -> dev tools in browser -> Application -> Session Storage
